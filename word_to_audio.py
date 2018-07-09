@@ -9,7 +9,7 @@ def main():
     parser = argparse.ArgumentParser(description="create a directory for each word, \
         and 84 different voices per word in its directory")
     parser.add_argument('subscription_key', help='Speech service subscription key')
-    parser.add_argument('--words', nargs= '*', help='Words to be pronounced', default=['albert einstein'])
+    parser.add_argument('--words', nargs='*', help='Words to be pronounced', default=['albert einstein'])
     args = parser.parse_args()
 
     word_list = args.words
@@ -55,16 +55,15 @@ def main():
                     random_volume, random_pitch, word)
                 tts_response = requests.post(tts_url, headers = tts_header, data = tts_content)
 
-                file_name = voice.replace(' ', '') + random_rate + random_volume + random_pitch 
+                file_name = voice.replace(' ', '') + random_rate + random_volume + random_pitch + '.wav'
                 with open(path + '/' + file_name, 'wb') as f:
                     f.write(tts_response.content)
-                    print(path + ' ' + file_name + ' is created!')
 
                 random_rate = str(randint(-20, 20)) + '%'
                 random_volume = str(randint(-20, 20)) + '%'
                 random_pitch = str(randint(-20, 20)) + 'Hz'
 
-        print('---------------------------------')
+        print('all audios for ' + word + ' are generated!')
 
 
 if __name__ == '__main__':
