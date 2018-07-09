@@ -5,7 +5,7 @@ from pydub import AudioSegment
 
 def main():
     parser = argparse.ArgumentParser(
-        description = "split a .wav file into multiple .wav files with same length")
+        description="split a .wav file into multiple .wav files with same length")
     parser.add_argument('filename', help='name of the wav file that will be splitted')
     parser.add_argument('length', type=int, default=5,
         help='preferred length to split (in second)')
@@ -25,6 +25,7 @@ def main():
         new_audio = audio[(i * 1000): ((i + args.length) * 1000)]
         new_filename = path_name + '/' + path_name + '_' + str(i) + '.wav'
         new_audio.export(new_filename, format="wav")
+
 
 if __name__ == '__main__':
     main()
