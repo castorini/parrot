@@ -1,3 +1,8 @@
+<p align="center">
+  <img width="600" height="185,005"
+       src="https://raw.githubusercontent.com/castorini/parrot/master/logo/logotype%20horizontal.png">
+</p>
+
 # parrot
 Keyword spotting using audio from speech synthesis services and YouTube
 
