@@ -5,9 +5,9 @@ Keyword spotting using audio from speech synthesis services and YouTube
 
 **Generate systhesized examples for words**
 ```
-python word_to_audio.py [your_subscription_key] --words [word1] [word2] ...
+python word_to_audio.py [microsoft_subscription_key] [watson_subscription_username] [watson_subscription_password] --words [word1] [word2] ...
 ```
-Create 84 different systhesized examples for each word using [Microsoft Cognitive Services](https://azure.microsoft.com/en-ca/services/cognitive-services/text-to-speech/).
+Create 320 different systhesized examples for each word using [Microsoft Cognitive Services](https://azure.microsoft.com/en-ca/services/cognitive-services/text-to-speech/), [Google Cloud Text-to-Speech](https://cloud.google.com/text-to-speech/) and [IBM Watson Text to Speech](https://www.ibm.com/watson/services/text-to-speech/).
 
 **Split a wav file into multiple wav files with same length**
 ```
